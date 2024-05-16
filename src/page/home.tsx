@@ -13,6 +13,9 @@ const context = useContext(MyContext)
   //without useMemo
   // const SelectItem = items.find((item) => item.isSelect)
   
+  if(!context) {
+    throw new Error('component must be used within a provider') 
+}
   const {value, setValue} = context
   return (
     <div>
